@@ -3,11 +3,15 @@ return {
   "nvim-telescope/telescope.nvim",
   branch = "master",
   dependencies = { "nvim-lua/plenary.nvim" },
+  keys = {
+    { "<C-p>", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+    { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Live Grep" },
+    { "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
+    { "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Help Tags" },
+  },
   opts = {
     defaults = {
-      file_previewer = require('telescope.previewers').vim_buffer_cat.new,
-      grep_previewer = require('telescope.previewers').vim_buffer_vimgrep.new,
-      qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
+      -- Remove the problematic previewer configurations that cause loading issues
     },
   },
 }
