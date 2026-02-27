@@ -5,7 +5,7 @@ return {
     -- Configure Kanso theme options
     require("kanso").setup({
       variant = "dark", -- Use the dark variant
-      transparent = false, -- Set to true if you want transparent background
+      transparent = true, -- Set to true if you want transparent background
     })
     
     -- Set the colorscheme
