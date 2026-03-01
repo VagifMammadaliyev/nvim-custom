@@ -15,7 +15,16 @@ return {
   -- setting the keybinding for LazyGit with 'keys' is recommended in
   -- order to load the plugin when the command is run for the first time
   keys = {
-    { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+    { 
+      "<leader>lg", 
+      function()
+        -- Set environment variables for nvr to work
+        vim.env.GIT_EDITOR = 'nvr --remote-wait'
+        vim.env.EDITOR = 'nvr --remote-wait'
+        vim.cmd('LazyGit')
+      end,
+      desc = "LazyGit" 
+    },
     { "<leader>lc", "<cmd>LazyGitCurrentFile<cr>", desc = "LazyGit Current File" },
     { "<leader>lf", "<cmd>LazyGitFilter<cr>", desc = "LazyGit Filter" },
     { "<leader>lcf", "<cmd>LazyGitFilterCurrentFile<cr>", desc = "LazyGit Filter Current File" },
@@ -26,5 +35,11 @@ return {
     vim.g.lazygit_floating_window_border_chars = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' } -- customize border chars
     vim.g.lazygit_floating_window_use_plenary = 0 -- use plenary.nvim to manage floating window if available
     vim.g.lazygit_use_neovim_remote = 1 -- fallback to 0 if neovim-remote is not installed
+    
+    -- Set NVIM environment variable for nvr to work
+    local nvim_server = vim.v.servername
+    if nvim_server then
+      vim.env.NVIM = nvim_server
+    end
   end,
 }
