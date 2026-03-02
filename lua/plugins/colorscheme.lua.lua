@@ -23,6 +23,9 @@ return {
         variant = "moon",
         dark_variant = "moon",
         transparent = true, -- Set to true if you want transparent background
+        styles = {
+          italic = false,
+        },
       })
       vim.cmd.colorscheme("rose-pine")
       vim.api.nvim_set_hl(0, "Normal", { bg = "none" })

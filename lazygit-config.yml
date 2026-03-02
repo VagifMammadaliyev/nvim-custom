@@ -1,0 +1,6 @@
+os:
+  edit: 'nvr --remote-wait "{{filename}}"'
+  editAtLine: 'nvr --remote-wait +{{line}} "{{filename}}"'
+  editAtLineAndWait: 'nvr --remote-wait +{{line}} "{{filename}}"'
+  editInTerminal: false
+  editInTerminal: false
