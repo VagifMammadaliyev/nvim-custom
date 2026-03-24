@@ -37,18 +37,36 @@
 --   },
 -- }
 
+-- return {
+--   {
+--     "vague-theme/vague.nvim",
+--     lazy = false, -- make sure we load this during startup if it is your main colorscheme
+--     priority = 1000, -- make sure to load this before all the other plugins
+--     config = function()
+--       require("vague").setup({
+--         transparent = true, -- Set to true if you want transparent background
+--         bold = false,
+--         italic = false,
+--       })
+--       vim.cmd("colorscheme vague")
+--     end,
+--   },
+-- }
+
 return {
   {
-    "vague-theme/vague.nvim",
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000, -- make sure to load this before all the other plugins
+    "snesjhon/gitlab-nvim-theme",
+    lazy = false,
+    priority = 1000,
     config = function()
-      require("vague").setup({
-        transparent = true, -- Set to true if you want transparent background
+      require("gitlab-theme").setup({
+        contrast = true,
+        borders = true,
+        italic = true,
         bold = false,
-        italic = false,
+        transparent = true,
       })
-      vim.cmd("colorscheme vague")
+      vim.cmd.colorscheme("gitlab_dark")
     end,
   },
 }
