@@ -60,9 +60,9 @@ return {
     priority = 1000,
     config = function()
       require("gitlab-theme").setup({
-        contrast = true,
+        contrast = false,
         borders = true,
-        italic = true,
+        italic = false,
         bold = false,
         transparent = true,
       })
