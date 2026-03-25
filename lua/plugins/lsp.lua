@@ -3,6 +3,9 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
+        marksman = {
+          enabled = true,
+        },
         vtsls = {
           enabled = true,
           filetypes = {
